@@ -1,0 +1,46 @@
+.fc-day-number {
+    font-size: 1.5em;
+    color: #5c005c;
+  }
+  
+  /* override day title color and size */
+  .fc-day-header {
+    font-size: 1.5em;
+    color: #00b294;
+  }
+
+  .teste {
+    margin-top:30px;
+    margin-left:100px;
+    width: 50%;
+    
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    color:  #3D393F;
+  }
+
+  .fc-toolbar h2 {
+    margin: 0;
+    color: #000000;
+    font-family: Open Sans;
+    font-style: normal;
+    text-transform: capitalize;
+    }
+
+    .ReactModal__Overlay {
+      z-index: 1000;
+  }
+
+  .fc .fc-button-primary {
+    color: #fff;
+    color: var(--fc-button-text-color, #fff);
+    background-color: #48478A;
+    border-color: #48478A;
+}
+
+.fc-time{
+  display : none;
+}
