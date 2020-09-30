@@ -49,15 +49,19 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().authorizeRequests()
-         .antMatchers(HttpMethod.POST, "/auth").permitAll()
-         .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
-         .antMatchers(HttpMethod.GET, "/usuarios/confirmar-conta/*").permitAll()
-         .antMatchers(HttpMethod.GET, "/usuarios/exportar").permitAll()
-         .antMatchers(HttpMethod.GET, "/usuarios/importar").permitAll()
-         .anyRequest().authenticated()
-         .and().csrf().disable()
-         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-         .and().addFilterBefore(new AutenticacaoFilter(tokenService, repository), UsernamePasswordAuthenticationFilter.class);
+                .antMatchers(HttpMethod.POST, "/auth").permitAll()
+                .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
+                .antMatchers(HttpMethod.GET, "/usuarios/confirmar-conta/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/usuarios/exportar").permitAll()
+                .antMatchers(HttpMethod.GET, "/usuarios/importar").permitAll()
+
+                .antMatchers(HttpMethod.GET, "/h2-console/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/h2-console/**").permitAll()
+
+                .anyRequest().authenticated()
+                .and().csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().addFilterBefore(new AutenticacaoFilter(tokenService, repository), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
