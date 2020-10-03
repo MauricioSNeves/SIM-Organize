@@ -29,6 +29,9 @@ public class Usuario implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Perfil> perfis = new ArrayList<>();
 
+    @OneToOne
+    private Level level;
+
     public Usuario(){
 
     }
@@ -127,6 +130,14 @@ public class Usuario implements UserDetails {
 
     public void setPerfis(List<Perfil> perfis) {
         this.perfis = perfis;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
     @Override

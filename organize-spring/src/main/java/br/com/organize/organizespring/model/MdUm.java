@@ -12,7 +12,7 @@ public class MdUm {
 
 //    @OneToOne
     @OneToOne(cascade = CascadeType.REMOVE)
-    private MetodoDx metodoDx;
+    private McUm mcUm;
 
     public MdUm() {
     }
@@ -37,11 +37,11 @@ public class MdUm {
         this.nomeMetaMdUm = nomeMetaMdUm;
     }
 
-    public MetodoDx getMetodoDx() {
-        return metodoDx;
+    public McUm getMcUm() {
+        return mcUm;
     }
 
-    public void setMetodoDx(MetodoDx metodoDx) {
-        this.metodoDx = metodoDx;
+    public void setMcUm(McUm mcUm) {
+        this.mcUm = mcUm;
     }
 }
