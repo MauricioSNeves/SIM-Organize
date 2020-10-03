@@ -11,8 +11,11 @@ public class MdDois {
     private String nomeMetaMdDois;
 
 //    @OneToOne
+//    @OneToOne(cascade = CascadeType.REMOVE)
+//    private MCDois mcDois;
+
     @OneToOne(cascade = CascadeType.REMOVE)
-    private MCDois mcDois;
+    private MetodoDx metodoDx;
 
     public MdDois() {
     }
@@ -37,11 +40,20 @@ public class MdDois {
         this.nomeMetaMdDois = nomeMetaMdDois;
     }
 
-    public MCDois getMcDois() {
-        return mcDois;
+//    public MCDois getMcDois() {
+//        return mcDois;
+//    }
+//
+//    public void setMcDois(MCDois mcDois) {
+//        this.mcDois = mcDois;
+//    }
+
+
+    public MetodoDx getMetodoDx() {
+        return metodoDx;
     }
 
-    public void setMcDois(MCDois mcDois) {
-        this.mcDois = mcDois;
+    public void setMetodoDx(MetodoDx metodoDx) {
+        this.metodoDx = metodoDx;
     }
 }

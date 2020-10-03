@@ -75,8 +75,6 @@ public class MetodoDxController {
 
             return ResponseEntity.ok(lista);
         }
-//        lista.add("");
-//        lista.add("");
 
         return ResponseEntity.notFound().build();
     }

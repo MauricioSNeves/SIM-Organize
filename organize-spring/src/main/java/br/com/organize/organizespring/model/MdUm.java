@@ -1,5 +1,7 @@
 package br.com.organize.organizespring.model;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +13,12 @@ public class MdUm {
     private String nomeMetaMdUm;
 
 //    @OneToOne
+//    @OneToOne(cascade = CascadeType.REMOVE)
+//    private McUm mcUm;
+
     @OneToOne(cascade = CascadeType.REMOVE)
-    private McUm mcUm;
+    private MetodoDx metodoDx;
+
 
     public MdUm() {
     }
@@ -37,11 +43,20 @@ public class MdUm {
         this.nomeMetaMdUm = nomeMetaMdUm;
     }
 
-    public McUm getMcUm() {
-        return mcUm;
+//    public McUm getMcUm() {
+//        return mcUm;
+//    }
+//
+//    public void setMcUm(McUm mcUm) {
+//        this.mcUm = mcUm;
+//    }
+
+
+    public MetodoDx getMetodoDx() {
+        return metodoDx;
     }
 
-    public void setMcUm(McUm mcUm) {
-        this.mcUm = mcUm;
+    public void setMetodoDx(MetodoDx metodoDx) {
+        this.metodoDx = metodoDx;
     }
 }
