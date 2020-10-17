@@ -14,7 +14,7 @@ public class TarefaMdUmForm {
     @NotNull @NotEmpty
     private Integer tempoRestante;
     private Date dataCriacao;
-    private Boolean statusMdUm;
+    private Integer statusMdUm;
 
     public String getNomeTarefaMdUm() {
         return nomeTarefaMdUm;
@@ -40,11 +40,11 @@ public class TarefaMdUmForm {
         this.dataCriacao = dataCriacao;
     }
 
-    public Boolean getStatusMdUm() {
+    public Integer getStatusMdUm() {
         return statusMdUm;
     }
 
-    public void setStatusMdUm(Boolean statusMdUm) {
+    public void setStatusMdUm(Integer statusMdUm) {
         this.statusMdUm = statusMdUm;
     }
 

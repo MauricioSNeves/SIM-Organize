@@ -2,6 +2,7 @@ package br.com.organize.organizespring.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Meetup {
@@ -12,13 +13,14 @@ public class Meetup {
     private String descricao;
     private Date data;
 
-    @ManyToOne
-    private UsuarioHasMeetup usuarioHasMeetup;
+    @ManyToMany(mappedBy = "meetups")
+    private List<Usuario> usuarios;
 
-    public Meetup(Integer idMeetup, String descricao, Date data) {
+    public Meetup(Integer idMeetup, String descricao, Date data, List<Usuario> usuarios) {
         this.idMeetup = idMeetup;
         this.descricao = descricao;
         this.data = data;
+        this.usuarios = usuarios;
     }
 
     public Integer getIdMeetup() {
@@ -45,11 +47,11 @@ public class Meetup {
         this.data = data;
     }
 
-    public UsuarioHasMeetup getUsuarioHasMeetup() {
-        return usuarioHasMeetup;
+    public List<Usuario> getUsuarios() {
+        return usuarios;
     }
 
-    public void setUsuarioHasMeetup(UsuarioHasMeetup usuarioHasMeetup) {
-        this.usuarioHasMeetup = usuarioHasMeetup;
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 }

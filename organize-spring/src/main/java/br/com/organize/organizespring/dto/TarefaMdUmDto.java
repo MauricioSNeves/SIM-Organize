@@ -11,7 +11,7 @@ public class TarefaMdUmDto {
     private String nomeTarefaMdUm;
     private Integer tempoRestante;
     private Date dataCriacao;
-    private Boolean statusMdUm;
+    private Integer statusMdUm;
 
     public TarefaMdUmDto(TarefaMdUm tarefaMdUm) {
         this.idTarefaMdUm = tarefaMdUm.getIdTarefaMdUm();
@@ -37,7 +37,7 @@ public class TarefaMdUmDto {
         return dataCriacao;
     }
 
-    public Boolean getStatusMdUm() {
+    public Integer getStatusMdUm() {
         return statusMdUm;
     }
 }

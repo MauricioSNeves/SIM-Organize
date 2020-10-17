@@ -10,7 +10,6 @@ public class UsuarioDto {
     private String email;
     private String senha;
     private Integer nivel;
-    private Integer xpTotal;
     private Integer moedas;
     private String cpf;
 
@@ -21,7 +20,6 @@ public class UsuarioDto {
         this.email = usuario.getEmail();
         this.senha = usuario.getSenha();
         this.nivel = usuario.getNivel();
-        this.xpTotal = usuario.getXpTotal();
         this.moedas = usuario.getMoedas();
         this.cpf = usuario.getCpf();
     }
@@ -48,10 +46,6 @@ public class UsuarioDto {
 
     public Integer getNivel() {
         return nivel;
-    }
-
-    public Integer getXpTotal() {
-        return xpTotal;
     }
 
     public Integer getMoedas() {

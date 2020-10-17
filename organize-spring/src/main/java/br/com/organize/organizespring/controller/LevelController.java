@@ -28,26 +28,24 @@ public class LevelController {
         Usuario usuario = repository.getOne(usuarioService.usuarioAtual(authentication));
         usuario.getLevel().setQtdXp(xp);
 
-        if (usuario.getLevel().getQtdXp() == usuario.getLevel().getNumero() * (usuario.getLevel().getNumero() - 1)){
+        Integer qtdeMaximaXp = usuario.getLevel().getNumero() * (usuario.getLevel().getNumero() - 1);
+
+        if (usuario.getLevel().getQtdXp() == qtdeMaximaXp){
             usuario.getLevel().setNumero(usuario.getLevel().getNumero() + 1);
 
             switch(usuario.getLevel().getNumero()){
-                case 10:
-                case 20:
-                case 30:
-                case 40:
-                case 50:
-                case 60:
-                case 70:
-                case 80:
-                case 90:
-                case 100:
+                case 10: case 20:
+                case 30: case 40:
+                case 50: case 60:
+                case 70: case 80:
+                case 90: case 100:
                     usuario.setMoedas(usuario.getMoedas() + 100);
                     break;
                 default:
                     usuario.setMoedas(usuario.getMoedas() + 10);
+                    break;
             }
-
+            usuario.getLevel().setQtdXp(0);
         }
         ResponseEntity.ok().build();
     }

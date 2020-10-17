@@ -14,7 +14,7 @@ public class TarefaMdDoisForm {
     @NotNull @NotEmpty
     private Integer tempoRestante;
     private Date dataCriacao;
-    private Boolean statusMdDois;
+    private Integer statusMdDois;
 
     public String getNomeTarefaMdDois() {
         return nomeTarefaMdDois;
@@ -40,14 +40,9 @@ public class TarefaMdDoisForm {
         this.dataCriacao = dataCriacao;
     }
 
-    public Boolean getStatusMdDois() {
-        return statusMdDois;
-    }
-
-    public void setStatusMdDois(Boolean statusMdDois) {
+    public void setStatusMdDois(Integer statusMdDois) {
         this.statusMdDois = statusMdDois;
     }
-
     public TarefaMdDois converter(){
         return new TarefaMdDois(nomeTarefaMdDois, tempoRestante, dataCriacao, statusMdDois);
     }

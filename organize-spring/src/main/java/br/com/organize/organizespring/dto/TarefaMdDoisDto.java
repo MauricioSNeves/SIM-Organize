@@ -10,7 +10,7 @@ public class TarefaMdDoisDto {
     private String nomeTarefaMdDois;
     private Integer tempoRestante;
     private Date dataCriacao;
-    private Boolean statusMdDois;
+    private Integer statusMdDois;
 
     public TarefaMdDoisDto(TarefaMdDois tarefaMdDois) {
         this.idTarefaMdDois = tarefaMdDois.getIdTarefaMdDois();
@@ -36,7 +36,7 @@ public class TarefaMdDoisDto {
         return dataCriacao;
     }
 
-    public Boolean getStatusMdDois() {
+    public Integer getStatusMdDois() {
         return statusMdDois;
     }
 }

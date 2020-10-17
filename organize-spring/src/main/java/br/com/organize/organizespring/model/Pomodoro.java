@@ -26,7 +26,7 @@ public class Pomodoro {
         this.usuario = usuario;
     }
 
-    @OneToOne
+    @ManyToOne
     private Usuario usuario;
 
     public Integer getIdPomodoro() {

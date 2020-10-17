@@ -15,7 +15,7 @@ public class TarefaMdDois {
     private String nomeTarefaMdDois;
     private Integer tempoRestante;
     private Date dataCriacao;
-    private Boolean statusMdDois;
+    private Integer statusMdDois;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -25,7 +25,7 @@ public class TarefaMdDois {
 
     }
 
-    public TarefaMdDois(String nomeTarefaMdDois, Integer tempoRestante, Date dataCriacao, Boolean statusMdDois) {
+    public TarefaMdDois(String nomeTarefaMdDois, Integer tempoRestante, Date dataCriacao, Integer statusMdDois) {
         this.nomeTarefaMdDois = nomeTarefaMdDois;
         this.tempoRestante = tempoRestante;
         this.dataCriacao = dataCriacao;
@@ -64,11 +64,11 @@ public class TarefaMdDois {
         this.dataCriacao = dataCriacao;
     }
 
-    public Boolean getStatusMdDois() {
+    public Integer getStatusMdDois() {
         return statusMdDois;
     }
 
-    public void setStatusMdDois(Boolean statusMdDois) {
+    public void setStatusMdDois(Integer statusMdDois) {
         this.statusMdDois = statusMdDois;
     }
 

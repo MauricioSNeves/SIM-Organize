@@ -168,7 +168,7 @@ public class MetodoDxController {
 
     @PutMapping("/tarefa/md1/{idTarefa}")
     @Transactional
-    public ResponseEntity<TarefaMdDoisDto> atualizaStatusDois(@PathVariable("idTarefa") Integer idTarefa, @RequestBody Boolean status) {
+    public ResponseEntity<TarefaMdDoisDto> atualizaStatusDois(@PathVariable("idTarefa") Integer idTarefa, @RequestBody Integer status) {
         TarefaMdDois tarefa = tarefaMdDoisRepository.getOne(idTarefa);
         tarefa.setStatusMdDois(status);
         tarefaMdDoisRepository.save(tarefa);
@@ -177,7 +177,7 @@ public class MetodoDxController {
 
     @PutMapping("/tarefa/md2/{idTarefa}")
     @Transactional
-    public ResponseEntity<TarefaMdUmDto> atualizaStatusUm(@PathVariable("idTarefa") Integer idTarefa, @RequestBody Boolean status) {
+    public ResponseEntity<TarefaMdUmDto> atualizaStatusUm(@PathVariable("idTarefa") Integer idTarefa, @RequestBody Integer status) {
         TarefaMdUm tarefa = tarefaMdUmRepository.getOne(idTarefa);
         tarefa.setStatusMdUm(status);
         tarefaMdUmRepository.save(tarefa);

@@ -15,7 +15,7 @@ public class TarefaMdUm {
     private String nomeTarefaMdUm;
     private Integer tempoRestante;
     private Date dataCriacao;
-    private Boolean statusMdUm;
+    private Integer statusMdUm;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -25,7 +25,7 @@ public class TarefaMdUm {
 
     }
 
-    public TarefaMdUm(String nomeTarefaMdUm, Integer tempoRestante, Date dataCriacao, Boolean statusMdUm) {
+    public TarefaMdUm(String nomeTarefaMdUm, Integer tempoRestante, Date dataCriacao, Integer statusMdUm) {
         this.nomeTarefaMdUm = nomeTarefaMdUm;
         this.tempoRestante = tempoRestante;
         this.dataCriacao = dataCriacao;
@@ -64,11 +64,11 @@ public class TarefaMdUm {
         this.dataCriacao = dataCriacao;
     }
 
-    public Boolean getStatusMdUm() {
+    public Integer getStatusMdUm() {
         return statusMdUm;
     }
 
-    public void setStatusMdUm(Boolean statusMdUm) {
+    public void setStatusMdUm(Integer statusMdUm) {
         this.statusMdUm = statusMdUm;
     }
 

@@ -5,6 +5,7 @@ import br.com.organize.organizespring.form.UsuarioForm;
 import br.com.organize.organizespring.model.*;
 import br.com.organize.organizespring.repository.CalendarioRepository;
 import br.com.organize.organizespring.repository.CheckListRepository;
+import br.com.organize.organizespring.repository.LevelRepository;
 import br.com.organize.organizespring.repository.UsuarioRepository;
 import br.com.organize.organizespring.service.UsuarioService;
 import br.com.organize.organizespring.util.FilaObj;
@@ -37,6 +38,9 @@ public class UsuarioController {
     private CheckListRepository checkListRepository;
 
     @Autowired
+    private LevelRepository levelRepository;
+
+    @Autowired
     private JavaMailSender mailSender;
 
     @Autowired
@@ -65,12 +69,17 @@ public class UsuarioController {
 
             Calendario calendario = new Calendario();
             calendario.setUsuario(usuario);
+
             CheckList checkList = new CheckList();
             checkList.setUsuario(usuario);
+
+            Level level = new Level();
+            level.setUsuario(usuario);
 
             repository.save(usuario);
             calendarioRepository.save(calendario);
             checkListRepository.save(checkList);
+            levelRepository.save(level);
 
             enviaEmail(usuario);
 

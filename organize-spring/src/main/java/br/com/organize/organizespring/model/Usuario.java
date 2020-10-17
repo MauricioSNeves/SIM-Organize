@@ -21,7 +21,6 @@ public class Usuario implements UserDetails {
     private String email;
     private String senha;
     private Integer nivel;
-    private Integer xpTotal;
     private Integer moedas;
     private String cpf;
     private boolean valido;
@@ -31,6 +30,21 @@ public class Usuario implements UserDetails {
 
     @OneToOne
     private Level level;
+
+    @OneToMany
+    private List<Pomodoro> pomodoro;
+
+    @ManyToMany
+    @JoinTable(name = "Usuario_has_medalha",
+            joinColumns = @JoinColumn(name = "idUsuario"),
+            inverseJoinColumns = @JoinColumn(name = "idMedalha"))
+    private List<Medalha> medalhas;
+
+    @ManyToMany
+    @JoinTable(name = "Usuario_has_meetup",
+            joinColumns = @JoinColumn(name = "idUsuario"),
+            inverseJoinColumns = @JoinColumn(name = "idMeetup"))
+    private List<Meetup> meetups;
 
     public Usuario(){
 
@@ -42,6 +56,22 @@ public class Usuario implements UserDetails {
         this.email = email;
         this.senha = senha;
         this.cpf = cpf;
+    }
+
+    public List<Medalha> getMedalhas() {
+        return medalhas;
+    }
+
+    public void setMedalhas(List<Medalha> medalhas) {
+        this.medalhas = medalhas;
+    }
+
+    public List<Pomodoro> getPomodoro() {
+        return pomodoro;
+    }
+
+    public void setPomodoro(List<Pomodoro> pomodoro) {
+        this.pomodoro = pomodoro;
     }
 
     public Long getIdUsuario() {
@@ -90,14 +120,6 @@ public class Usuario implements UserDetails {
 
     public void setNivel(Integer nivel) {
         this.nivel = nivel;
-    }
-
-    public Integer getXpTotal() {
-        return xpTotal;
-    }
-
-    public void setXpTotal(Integer xpTotal) {
-        this.xpTotal = xpTotal;
     }
 
     public Integer getMoedas() {

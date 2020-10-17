@@ -1,9 +1,7 @@
 package br.com.organize.organizespring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Medalha {
@@ -18,17 +16,29 @@ public class Medalha {
     private Integer level;
     private Boolean disponivel;
 
+    @ManyToMany(mappedBy = "medalhas")
+    private List<Usuario> usuarios;
+
     public Medalha() {
 
     }
 
-    public Medalha(Integer idMedalha, String descricao, String medalha, String nome, Integer level, Boolean disponivel) {
+    public Medalha(Integer idMedalha, String descricao, String medalha, String nome, Integer level, Boolean disponivel, List<Usuario> usuarios) {
         this.idMedalha = idMedalha;
         this.descricao = descricao;
         this.medalha = medalha;
         this.nome = nome;
         this.level = level;
         this.disponivel = disponivel;
+        this.usuarios = usuarios;
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 
     public Integer getIdMedalha() {

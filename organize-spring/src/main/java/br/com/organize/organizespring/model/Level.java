@@ -1,6 +1,8 @@
 package br.com.organize.organizespring.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Level {
@@ -10,6 +12,9 @@ public class Level {
     private Integer idLevel;
     private Integer numero;
     private Integer qtdXp;
+
+    @OneToOne
+    private Usuario usuario;
 
     public Level() {
 
@@ -21,9 +26,6 @@ public class Level {
         this.qtdXp = qtdXp;
         this.usuario = usuario;
     }
-
-    @OneToOne
-    private Usuario usuario;
 
     public Integer getIdLevel() {
         return idLevel;
