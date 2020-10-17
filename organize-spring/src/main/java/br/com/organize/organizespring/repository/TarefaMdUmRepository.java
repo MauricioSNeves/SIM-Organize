@@ -19,6 +19,6 @@ public interface TarefaMdUmRepository extends JpaRepository<TarefaMdUm, Integer>
 
     @Modifying
     @Transactional
-    @Query(value=" delete from tarefa_md_um where md_um_id_md_um = ?1", nativeQuery =true)
+    @Query(value="delete from tarefa_md_um where md_um_id_md_um = ?1", nativeQuery =true)
     void deletaTarefa (Integer idMdUm);
 }

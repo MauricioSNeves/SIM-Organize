@@ -6,6 +6,8 @@ import br.com.organize.organizespring.form.*;
 import br.com.organize.organizespring.model.*;
 import br.com.organize.organizespring.repository.*;
 import br.com.organize.organizespring.service.UsuarioService;
+import com.sun.tools.javac.util.Convert;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -182,6 +184,33 @@ public class MetodoDxController {
         tarefa.setStatusMdUm(status);
         tarefaMdUmRepository.save(tarefa);
         return ResponseEntity.ok().build();
+    }
+
+
+    @GetMapping("/meses/{id}")
+    public Integer quantidadeMesesFaltantes(@PathVariable Integer id){
+        Optional<MetodoDx> metodoDx = metodoDxRepository.findById(id);
+
+        String mesAgora = DateTime.now().toString("dd/MM/yyyy").substring(3,5);
+        String mesConclusao = metodoDx.get().getDataConclusaoDx().toString().substring(3,5);
+
+        return Integer.parseInt(mesConclusao) - Integer.parseInt(mesAgora);
+    }
+
+    @GetMapping("/meses/{id}")
+    public Integer mesBom(@PathVariable Integer id){
+        Optional<MetodoDx> metodoDx = metodoDxRepository.findById(id);
+
+//        List<TarefaMdUm> listaMd1 = tarefaMdDoisRepository.listaTarefasMd()
+//        Optional<TarefaMdUm> tarefaMdUm = ;
+//        Optional<TarefaMdDois> tarefaMdDois = ;
+
+
+//        String mesPassado = DateTime.now().toString("dd/MM/yyyy").substring(3,5);
+
+
+
+        return 0;
     }
 
 
