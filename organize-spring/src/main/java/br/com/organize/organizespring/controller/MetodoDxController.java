@@ -197,9 +197,9 @@ public class MetodoDxController {
         return Integer.parseInt(mesConclusao) - Integer.parseInt(mesAgora);
     }
 
-    @GetMapping("/meses/{id}")
-    public Integer mesBom(@PathVariable Integer id){
-        Optional<MetodoDx> metodoDx = metodoDxRepository.findById(id);
+//    @GetMapping("/meses/{id}")
+//    public Integer mesBom(@PathVariable Integer id){
+//        Optional<MetodoDx> metodoDx = metodoDxRepository.findById(id);
 
 //        List<TarefaMdUm> listaMd1 = tarefaMdDoisRepository.listaTarefasMd()
 //        Optional<TarefaMdUm> tarefaMdUm = ;
@@ -210,8 +210,8 @@ public class MetodoDxController {
 
 
 
-        return 0;
-    }
+//        return 0;
+//    }
 
 
 //    EXPORTAR E IMPORTAR ABAIXO

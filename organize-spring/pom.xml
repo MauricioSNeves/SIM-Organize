@@ -19,7 +19,30 @@
 		<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
 	</properties>
 
+	<build>
+		<plugins>
+
+			<plugin>
+				<artifactId/>
+
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+
 	<dependencies>
+
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
