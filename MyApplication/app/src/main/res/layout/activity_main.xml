@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_config"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/tb_menu">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_moeda">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/moeda"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="100"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_avatar"
+            android:layout_marginLeft="50dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/cachorro"
+            android:id="@+id/iv_avatar"
+            />
+            <ProgressBar
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:id="@+id/pb_xp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                />
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="NV 5"/>
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                    android:layout_marginLeft="150dp"
+                android:text="50%"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_diamante">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="100"
+            android:layout_marginLeft="5dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/diamante"
+            android:layout_marginTop="5dp"
+            />
+        </LinearLayout>
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tb_menu"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:id="@+id/ll_filtro"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FILTRAR POR:"
+            android:layout_gravity="center"
+            />
+
+        <Spinner
+            android:layout_marginLeft="4dp"
+            android:id="@+id/sp_filtroChecklist"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/filtro_config"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_checklist"
+        app:layout_constraintTop_toBottomOf="@id/ll_filtro"
+        tools:context=".MainActivity"
+        android:layout_marginTop="25dp"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/check_list_config"
+           android:id="@+id/rv_tarefas"
+            tools:listitem="@layout/cheklist_layout"/>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_paginacao"
+        app:layout_constraintTop_toBottomOf="@id/ll_checklist"
+        android:layout_marginTop="20dp">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/butao_passar_voltar"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="45dp"
+            android:id="@+id/bt_voltar"
+            android:src="@drawable/voltar"
+            />
+        <ImageButton
+            android:layout_alignParentEnd="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/butao_passar_voltar"
+            android:layout_marginTop="10dp"
+            android:id="@+id/bt_passar"
+            android:src="@drawable/passar"
+            android:layout_marginRight="45dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/rl_paginacao">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/fab_criarTarefa"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            app:fabSize="normal"
+            android:backgroundTint="#803BA5"
+            android:elevation="10dp"
+            android:src="@drawable/ic_baseline_add_24"
+            android:background="@drawable/butao_passar_voltar"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

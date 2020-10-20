@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp">
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crie sua tarefa:"
+            android:textColor="#C41F11"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Digite a tarefa a ser realizada:"
+        android:textSize="14sp"
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/et_tarefaModal"
+            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informe o nível de importância da tarefa:"
+        android:textSize="14sp"
+        android:id="@+id/tv_importacia"
+        />
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+   </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:background="#80000000"
+            android:layout_marginRight="35dp"
+            android:onClick="cancelar"
+            android:id="@+id/bt_cancelaTarefaModal"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botao_modal"
+            android:textColor="#FCFCFC"
+            android:text="Criar"
+            android:layout_marginLeft="35dp"
+            android:onClick="criarTarefa"
+            android:id="@+id/bt_cria_TarefaModal"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

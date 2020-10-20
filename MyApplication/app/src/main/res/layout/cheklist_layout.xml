@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="2dp">
+
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/botaochecklist"
+            android:layout_alignParentStart="true"
+            android:id="@+id/ib_concluir"
+            android:onClick="concluir"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nome tarefa"
+            android:id="@+id/tv_nomeTarefa"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/ib_concluir"
+            />
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/editar"
+            android:onClick="editar"
+            android:id="@+id/editar.png"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            />
+        <ImageButton
+            android:layout_alignParentEnd="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/delete"
+            android:onClick="apagar"
+            android:id="@+id/ib_excluir"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
