@@ -188,30 +188,64 @@ public class MetodoDxController {
 
 
     @GetMapping("/meses/{id}")
-    public Integer quantidadeMesesFaltantes(@PathVariable Integer id){
+    public Integer quantidadeMesesFaltantes(@PathVariable Integer id) {
         Optional<MetodoDx> metodoDx = metodoDxRepository.findById(id);
 
-        String mesAgora = DateTime.now().toString("dd/MM/yyyy").substring(3,5);
-        String mesConclusao = metodoDx.get().getDataConclusaoDx().toString().substring(3,5);
+        String mesAgora = DateTime.now().toString("dd/MM/yyyy").substring(3, 5);
+        String mesConclusao = metodoDx.get().getDataConclusaoDx().toString().substring(3, 5);
 
         return Integer.parseInt(mesConclusao) - Integer.parseInt(mesAgora);
     }
 
-//    @GetMapping("/meses/{id}")
-//    public Integer mesBom(@PathVariable Integer id){
-//        Optional<MetodoDx> metodoDx = metodoDxRepository.findById(id);
+    @GetMapping("/meses")
+    public Integer mesBom() {
 
-//        List<TarefaMdUm> listaMd1 = tarefaMdDoisRepository.listaTarefasMd()
-//        Optional<TarefaMdUm> tarefaMdUm = ;
-//        Optional<TarefaMdDois> tarefaMdDois = ;
+        String mes = DateTime.now().toString("MM");
+
+        List<TarefaMdUm> listaMd1 = tarefaMdUmRepository.findAll();
+//        List<TarefaMdUm> md1Filtrada = new ArrayList<>();
+
+        List<TarefaMdDois> listaMd2 = tarefaMdDoisRepository.findAll();
+//        List<TarefaMdUm> md2Filtrada = new ArrayList<>();
+
+        int contadorTarefas = 0, contadorAtivo = 0, contadorConcluido = 0, contadorNaoConcluido = 0, contadorPendente = 0;
 
 
-//        String mesPassado = DateTime.now().toString("dd/MM/yyyy").substring(3,5);
+        for (TarefaMdUm item : listaMd1) {
+            if (item.getDataCriacao().toString().substring(3, 5).equals(mes)) {
+                contadorTarefas++;
+                if (item.getStatusMdUm() == 1) {
+                    contadorAtivo++;
+                } else if (item.getStatusMdUm() == 2) {
+                    contadorConcluido++;
+                } else if (item.getStatusMdUm() == 3) {
+                    contadorNaoConcluido++;
+                } else if (item.getStatusMdUm() == 4) {
+                    contadorPendente++;
+                }
+            }
+        }
+
+        for (TarefaMdDois item : listaMd2) {
+            if (item.getDataCriacao().toString().substring(3, 5).equals(mes)) {
+                contadorTarefas++;
+                if (item.getStatusMdDois() == 1) {
+                    contadorAtivo++;
+                } else if (item.getStatusMdDois() == 2) {
+                    contadorConcluido++;
+                } else if (item.getStatusMdDois() == 3) {
+                    contadorNaoConcluido++;
+                } else if (item.getStatusMdDois() == 4) {
+                    contadorPendente++;
+                }
+            }
+        }
 
 
 
-//        return 0;
-//    }
+
+        return contadorConcluido > contadorNaoConcluido ? 1 : 0;
+    }
 
 
 //    EXPORTAR E IMPORTAR ABAIXO
@@ -268,7 +302,6 @@ public class MetodoDxController {
 
 //            gravaRegistro(nomeArq, corpo);
             arqTotal += corpo + "\n";
-
 
 
             // monta o trailer

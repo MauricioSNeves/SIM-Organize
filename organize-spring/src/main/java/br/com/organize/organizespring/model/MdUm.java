@@ -12,15 +12,16 @@ public class MdUm {
     private Integer idMdUm;
     private String nomeMetaMdUm;
 
-//    @OneToOne
-//    @OneToOne(cascade = CascadeType.REMOVE)
-//    private McUm mcUm;
-
     @OneToOne(cascade = CascadeType.REMOVE)
     private MetodoDx metodoDx;
 
-
     public MdUm() {
+    }
+
+    public MdUm(Integer idMdUm, String nomeMetaMdUm, MetodoDx metodoDx) {
+        this.idMdUm = idMdUm;
+        this.nomeMetaMdUm = nomeMetaMdUm;
+        this.metodoDx = metodoDx;
     }
 
     public MdUm(String nomeMetaMdUm) {
@@ -42,15 +43,6 @@ public class MdUm {
     public void setNomeMetaMdUm(String nomeMetaMdUm) {
         this.nomeMetaMdUm = nomeMetaMdUm;
     }
-
-//    public McUm getMcUm() {
-//        return mcUm;
-//    }
-//
-//    public void setMcUm(McUm mcUm) {
-//        this.mcUm = mcUm;
-//    }
-
 
     public MetodoDx getMetodoDx() {
         return metodoDx;

@@ -10,14 +10,16 @@ public class MdDois {
     private Integer idMdDois;
     private String nomeMetaMdDois;
 
-//    @OneToOne
-//    @OneToOne(cascade = CascadeType.REMOVE)
-//    private MCDois mcDois;
-
     @OneToOne(cascade = CascadeType.REMOVE)
     private MetodoDx metodoDx;
 
     public MdDois() {
+    }
+
+    public MdDois(Integer idMdDois, String nomeMetaMdDois, MetodoDx metodoDx) {
+        this.idMdDois = idMdDois;
+        this.nomeMetaMdDois = nomeMetaMdDois;
+        this.metodoDx = metodoDx;
     }
 
     public MdDois(String nomeMetaMdDois) {
@@ -39,15 +41,6 @@ public class MdDois {
     public void setNomeMetaMdDois(String nomeMetaMdDois) {
         this.nomeMetaMdDois = nomeMetaMdDois;
     }
-
-//    public MCDois getMcDois() {
-//        return mcDois;
-//    }
-//
-//    public void setMcDois(MCDois mcDois) {
-//        this.mcDois = mcDois;
-//    }
-
 
     public MetodoDx getMetodoDx() {
         return metodoDx;

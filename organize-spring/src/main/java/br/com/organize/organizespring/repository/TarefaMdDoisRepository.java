@@ -22,4 +22,8 @@ public interface TarefaMdDoisRepository extends JpaRepository<TarefaMdDois, Inte
     @Transactional
     @Query(value="delete from tarefa_md_dois where md_dois_id_md_dois = ?1", nativeQuery =true)
     void deletaTarefa (Integer idMdDois);
+
+//    @Query(value="select * from tarefa_md_dois where md_dois_id_md_dois = ?1", nativeQuery =true)
+//    List<TarefaMdDois> listaTarefasMd (Integer idMdDois);
+
 }
