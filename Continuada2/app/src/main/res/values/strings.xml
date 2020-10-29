@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Target</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    //pages names
+    <string name="principal">Empresas</string>
+    <string name="favoritos">Favoritos</string>
+
+    //page List
+    <string name="pgList">Registre aqui mais uma oportunidade dos sonhos</string>
+
+    // page favorites
+    <string name="pg_Favorite_Sub_Title">Esses são suas empresas e trabalhos favoritos</string>
+
+    //btn
+    <string name="btn_register">Cadastre !!</string>
+    <string name="btn_goToPersonal">Ir para página da lista pessoal !!</string>
+    <string name="btn_goToRegister">Ir para página cadastro de alvo!!</string>
+    <string name="place_wish">Me mostre sua vontade</string>
+    <string name="place_workArea">Digite a area de trabalho</string>
+    <string name="place_desc">Digite uma descrição</string>
+    <string name="place_enterprise">Digite  o nome da Empresa</string>
+
+</resources>

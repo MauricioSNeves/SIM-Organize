@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Target</string>
+    <string name="principal">Home</string>
+    <string name="favoritos">Favorites</string>
+    <string name="pgList">Register here another dream opportunity</string>
+    <string name="pg_Favorite_Sub_Title">These are your favorite companies and jobs</string>
+    <string name="btn_register">Register !!</string>
+    <string name="btn_goToPersonal">Goes to personal list page</string>
+    <string name="btn_goToRegister">Goes to register target page</string>
+    <string name="place_wish">show me your will</string>
+    <string name="place_workArea">Enter your work area</string>
+    <string name="place_desc">Enter a description</string>
+    <string name="place_enterprise">Enter  the enterprise\'s name</string>
+</resources>
