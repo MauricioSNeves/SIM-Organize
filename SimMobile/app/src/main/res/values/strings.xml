@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SIM</string>
+
+    <string name="inpt_EmailText">Digite seu email</string>
+    <string name="inpt_PasswordText">Digite sua senha</string>
+    <string name="inpt_UserText">Digite seu user name</string>
+
+    <string name="pages_LoginText">Login</string>
+    <string name="pages_RegisterText">Cadastro</string>
+    <string name="pages_ChecklistText">Checklist</string>
+    <string name="pages_MainText">4dx</string>
+    <string name="pages_CalendarText">Calendário</string>
+
+
+    //Buttons
+    <string name="btn_Login">Entre</string>
+    <string name="btn_register">Cadastre-se</string>
+
+
+    //4dx
+    <string name="qdx_work">Como funciona?</string>
+
+
+</resources>
