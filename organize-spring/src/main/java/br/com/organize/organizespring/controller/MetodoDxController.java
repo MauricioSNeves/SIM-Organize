@@ -203,10 +203,7 @@ public class MetodoDxController {
         String mes = DateTime.now().toString("MM");
 
         List<TarefaMdUm> listaMd1 = tarefaMdUmRepository.findAll();
-//        List<TarefaMdUm> md1Filtrada = new ArrayList<>();
-
         List<TarefaMdDois> listaMd2 = tarefaMdDoisRepository.findAll();
-//        List<TarefaMdUm> md2Filtrada = new ArrayList<>();
 
         int contadorTarefas = 0, contadorAtivo = 0, contadorConcluido = 0, contadorNaoConcluido = 0, contadorPendente = 0;
 

@@ -74,6 +74,21 @@ public class CheckListController {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/true")
+    public ResponseEntity listarTarefasTrue(Authentication authentication) {
+        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
+
+        int contadorTrue = 0;
+
+        for (Tarefa tarefinha: tarefas) {
+            if (tarefinha.getStatusTarefa() == true){
+                contadorTrue++;
+            }
+        }
+
+        return ResponseEntity.ok(contadorTrue);
+    }
+
     @GetMapping("/cep/{cep}")
     public ResponseEntity consultarCep(@PathVariable String cep) {
         Cep cepEncontrado = clienteViaCep.getCep(cep);
