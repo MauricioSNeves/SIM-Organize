@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.simmobile.CheckList">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:id="@+id/ll_filtro"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FILTRAR POR:"
+            android:layout_gravity="center"
+            />
+
+        <Spinner
+            android:layout_marginLeft="4dp"
+            android:id="@+id/sp_filtroChecklist"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/checklist_filtro_config"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_checklist"
+        app:layout_constraintTop_toBottomOf="@id/ll_filtro"
+        tools:context=".MainActivity"
+        android:layout_marginTop="25dp"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/checklist_config"
+            android:id="@+id/rv_tarefas"
+            tools:listitem="@layout/tarefa_layout"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_paginacao"
+        app:layout_constraintTop_toBottomOf="@id/ll_checklist"
+        android:layout_marginTop="20dp">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/checklist_botao_passar_voltar"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="45dp"
+            android:id="@+id/bt_voltar"
+            android:src="@drawable/ic_voltar_foreground"
+            android:layout_alignParentLeft="true" />
+        <ImageButton
+            android:layout_alignParentEnd="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/checklist_botao_passar_voltar"
+            android:layout_marginTop="10dp"
+            android:id="@+id/bt_passar"
+            android:src="@drawable/ic_passar_foreground"
+            android:layout_marginRight="45dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rl_paginacao"
+        android:layout_marginTop="20dp"
+        android:id="@+id/fb_criar">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/fab_criarTarefa"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            app:fabSize="normal"
+            android:backgroundTint="#803BA5"
+            android:elevation="10dp"
+            android:src="@drawable/ic_criar_foreground"
+            android:background="@drawable/checklist_botao_passar_voltar"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

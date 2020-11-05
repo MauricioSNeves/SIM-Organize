@@ -20,5 +20,13 @@
     //4dx
     <string name="qdx_work">Como funciona?</string>
 
+    //Checklist_Modal
+    <string name="pages_CheckListModal_TextoCria">Crie sua tarefa:</string>
+    <string name="pages_CheckListModal_TextoEdit">Edite sua tarefa:</string>
+    <string name="pages_CheckListModal_FormTarefa">Digite a tarefa a ser realizada:</string>
+    <string name="pages_CheckListModal_FormImportancia">Informe o nível de importância da tarefa:</string>
+    <string name="pages_CheckListModal_BtnCria">CRIAR</string>
+    <string name="pages_CheckListModal_BtnEdita">EDITAR</string>
+    <string name="pages_CheckListModal_BtnCancela">CANCELAR</string>
 
 </resources>
