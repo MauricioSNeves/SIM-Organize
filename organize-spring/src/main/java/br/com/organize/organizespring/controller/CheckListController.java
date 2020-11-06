@@ -17,6 +17,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.transaction.Transactional;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -74,7 +75,7 @@ public class CheckListController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/true")
+    @GetMapping("/tarefa/ativa")
     public ResponseEntity listarTarefasTrue(Authentication authentication) {
         List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
 
@@ -87,6 +88,20 @@ public class CheckListController {
         }
 
         return ResponseEntity.ok(contadorTrue);
+    }
+
+    @GetMapping("/tarefa/id/ativa")
+    public ResponseEntity listarIdsTarefasTrue(Authentication authentication) {
+        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
+        List<Integer> ids = new ArrayList<>();
+
+        for (Tarefa tarefinha: tarefas) {
+            if (tarefinha.getStatusTarefa() == true){
+                ids.add(tarefinha.getIdTarefa());
+            }
+        }
+
+        return ResponseEntity.ok(ids);
     }
 
     @GetMapping("/cep/{cep}")
