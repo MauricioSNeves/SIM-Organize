@@ -81,7 +81,7 @@ public class UsuarioController {
             checkListRepository.save(checkList);
             levelRepository.save(level);
 
-            enviaEmail(usuario);
+            enviaEmail(usuario, form.getEmail());
 
             URI uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuario.getIdUsuario()).toUri();
             return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
@@ -90,12 +90,12 @@ public class UsuarioController {
 
 
     @GetMapping("/email")
-    public String enviaEmail(Usuario usuario) {
+    public String enviaEmail(Usuario usuario, String email) {
         SimpleMailMessage message = new SimpleMailMessage();
 
 //        message.setTo("primeupteste@gmail.com");
         message.setTo(usuario.getEmail());
-        message.setFrom("primeupteste@gmail.com");
+        message.setFrom(email);
         message.setSubject("Organize");
         message.setText("Confirme sua conta : "+ "http://localhost:8080/usuarios/confirmar-conta/"+usuario.getIdUsuario());
 
@@ -136,6 +136,16 @@ public class UsuarioController {
     public ResponseEntity entregaBrindesEvento() {
         fila.pool();
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/atualizar-senha/{email}/senha")
+    public ResponseEntity atualizarSenha(@PathVariable("email") String email, @PathVariable("senha") String senha) {
+       Optional<Usuario> usuario = repository.findByEmail(email);
+       if (usuario.isPresent()){
+           usuario.get().setSenha(senha);
+           return ResponseEntity.ok().build();
+       }
+       return ResponseEntity.notFound().build();
     }
 
 }
