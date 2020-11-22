@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExplicaDx">
+
+
+    <TextView
+        android:id="@+id/TitleOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ex_dxTitle"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/one"
+        app:layout_constraintTop_toBottomOf="@id/TitleOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ex_dx"
+        android:textSize="16sp"
+        android:textStyle="bold"
+/>
+
+    <TextView
+        android:id="@+id/TitleTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mcis"
+        app:layout_constraintTop_toBottomOf="@id/one"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/TitleTwo"
+        android:text="@string/mci"
+        android:textSize="16sp"
+        android:textStyle="bold"
+  />
+    <TextView
+        android:id="@+id/twoB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/two"
+        android:text="@string/md"
+        android:textSize="16sp"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:id="@+id/TitleThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/placar"
+        app:layout_constraintTop_toBottomOf="@id/twoB"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPurple"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/TitleThree"
+        android:text="@string/placar_expl"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/TitleFour"
+        android:textColor="@color/colorPurple"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/funciona"
+        app:layout_constraintTop_toBottomOf="@id/three"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/TitleFour"
+        android:text="@string/finalexp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

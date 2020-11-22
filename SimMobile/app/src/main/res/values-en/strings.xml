@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SIM</string>
+    <string name="inpt_EmailText">Type your e-mail</string>
+    <string name="inpt_PasswordText">Type your password</string>
+    <string name="inpt_UserText">Type your user name</string>
+    <string name="pages_LoginText">Login</string>
+    <string name="pages_RegisterText">Register</string>
+    <string name="pages_ChecklistText">Checklist</string>
+    <string name="pages_MainText">4dx</string>
+    <string name="pages_CalendarText">Calendar</string>
+    <string name="btn_Login">Come in</string>
+    <string name="btn_register">Register</string>
+    <string name="qdx_work">How is it works?</string>
+    <string name="criaDx_title">Create your 4dx</string>
+    <string name="cdx_ipt_name">Give a name to your 4dx</string>
+    <string name="cdx_ipt_mci">Type your MCI</string>
+    <string name="cdx_ipt_data">Data of the conclusion</string>
+    <string name="cdxipt_mdUm">Type ypur MD1</string>
+    <string name="cdxipt_mdDois">Type ypur MD2</string>
+    <string name="dx_btn_criaDx">Create 4DX</string>
+    <string name="qtdx_mdum">Type your MD1\'s task</string>
+    <string name="qtdx_mdDois">Type your MD2\'s task</string>
+    <string name="dx_btn_task">Create</string>
+    <string name="dx_btn_addDx">Create</string>
+    <string name="ex_dxTitle">O 4DX</string>
+    <string name="ex_dx">" 4Dx or 4 Execution Disciplines is a method that helps you achieve goals and results in a very different way"</string>
+    <string name="mcis">"Make it possible to achieve goals: MCI and Mds "</string>
+    <string name="mci">"MCI: Crucially important goal! It is your ultimate goal. "</string>
+    <string name="md">"MD's: Direction measures These are the most important sub-tasks! With them you will be aware of which tasks to choose during the week. "</string>
+    <string name="placar">"Scoreboard "</string>
+    <string name="placar_expl">"There you can see your performance. Remember, it has to be simple and objective. "</string>
+    <string name="funciona">"How it works? "</string>
+    <string name="finalexp">"Each week you will have to register a new MD until the final week. Each week you will have to say whether or not you completed the task for the previous week and choose a new one for the next week. "</string>
+
+
+</resources>

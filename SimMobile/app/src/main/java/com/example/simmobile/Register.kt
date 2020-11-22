@@ -65,7 +65,7 @@ class Register : AppCompatActivity() {
         val senha =  ipt_password.text.toString();
         val tipoAcesso = "free"
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://localhost:8080/")
+            .baseUrl("http://192.168.0.104:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -79,8 +79,20 @@ class Register : AppCompatActivity() {
 
         val callTargetJobs = result.postUser(newUser);
 
-        callTargetJobs.enqueue(object: Callback<Void> {
+/*        callTargetJobs.enqueue(object: Callback<Void> {
 
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(applicationContext, "erro", Toast.LENGTH_SHORT);
+            }
+
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                goToLogin()
+            }
+
+        })
+    */
+
+        callTargetJobs.enqueue(object : Callback<Void> {
             override fun onFailure(call: Call<Void>, t: Throwable) {
                 Toast.makeText(applicationContext, "erro", Toast.LENGTH_SHORT);
             }

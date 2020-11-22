@@ -6,65 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".QuatroDX">
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/page"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/grupo"
+            />
+
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:gravity="center_horizontal"
-            android:text="@string/pages_MainText"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="35dp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/wok"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center_horizontal"
             android:text="@string/qdx_work"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="35dp"
+            android:gravity="center_horizontal"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/name"
+            android:layout_marginTop="50dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-
+            android:onClick="explainDx"
             />
 
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="80dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@id/wok"
+    </LinearLayout>
 
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="4dx"
-                android:textColor="@color/colorWhite"
-                android:textSize="12dp" />
-
-        </LinearLayout>
-
-    </FrameLayout>
+    <Button
+        android:id="@+id/goToPersonal"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:onClick="createDx"
+        android:text="@string/dx_btn_addDx"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="310dp"
+        android:gravity="fill_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:textAlignment="center"
+        android:paddingTop="15dp"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
@@ -72,10 +64,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/colorBlack"
+        app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/colorWhite"
         app:itemTextColor="@color/colorWhite"
-        android:minHeight="80dp"
         app:menu="@menu/menu" />
 
 

@@ -19,6 +19,26 @@
 
     //4dx
     <string name="qdx_work">Como funciona?</string>
+    <string name="criaDx_title">Crie seu 4dx</string>
+    <string name="cdx_ipt_name">De um nome para o seu 4dx</string>
+    <string name="cdx_ipt_mci">Digite sua MCI</string>
+    <string name="cdx_ipt_data">Digite a data de conclusão</string>
+    <string name="cdxipt_mdUm">Digite sua MD1</string>
+    <string name="cdxipt_mdDois">Digite sua MD2</string>
+    <string name="dx_btn_criaDx">Criar 4DX</string>
+    <string name="qtdx_mdum">Digite sua tarefa MD1</string>
+    <string name="qtdx_mdDois">Digite sua tarefa da MD2</string>
+    <string name="dx_btn_task">Criar</string>
+    <string name="dx_btn_addDx">Criar</string>
+    <string name="ex_dxTitle">O 4DX</string>
+    <string name="ex_dx">4Dx ou 4 Disciplinas da Execução é um método que te auxilia a alcançar metas e resultados de uma forma bem diferente</string>
+    <string name="mcis">Fazer com que consiga atingir objetivos : MCI e Mds</string>
+    <string name="mci">MCI:  Meta crucialmente importante! É o seu objetivo final.</string>
+    <string name="md">MD\'s: Medidas de direções São as sub-tarefas mais importantes! Com elas você terá noção de quais tarefas escolher durante a semana.</string>
+    <string name="placar">Placar</string>
+    <string name="placar_expl">Nele você poderá ver seu desempenho. Lembre-se, tem que ser simples e objetivo.</string>
+    <string name="funciona">Como funciona?</string>
+    <string name="finalexp">A cada semana terá que cadastrar uma nova MD até a semana final. A cada semana terá que dizer se finalizou ou não a tarefa da semana anterior e escolher uma nova para a outra semana.</string>
 
     //Checklist_Modal
     <string name="pages_CheckListModal_TextoCria">Crie sua tarefa:</string>
