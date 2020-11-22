@@ -1,20 +1,16 @@
 package com.example.simmobile
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.simmobile.data.LoginData
-import com.example.simmobile.data.RegisterData
 import com.example.simmobile.interfaces.OpenAplication
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.alertEmail
 import kotlinx.android.synthetic.main.activity_main.alertPassword
 import kotlinx.android.synthetic.main.activity_main.ipt_email
 import kotlinx.android.synthetic.main.activity_main.ipt_password
-import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -90,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun goToRegister(component: View){
-        val register = Intent(this, Register::class.java)
-        startActivity(register);
+        val checkList = Intent(this, CheckList::class.java)
+        startActivity(checkList);
     }
 }

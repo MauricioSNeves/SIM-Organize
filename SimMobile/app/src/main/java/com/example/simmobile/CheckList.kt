@@ -1,5 +1,6 @@
 package com.example.simmobile
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,22 +9,26 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.simmobile.data.Tarefa
+import com.example.simmobile.interfaces.CheckListApi
 import kotlinx.android.synthetic.main.activity_checklist.*
+import kotlinx.android.synthetic.main.criar_tarefa.*
 import kotlinx.android.synthetic.main.criar_tarefa.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.ArrayList
 
-class CheckList : AppCompatActivity(){
+class CheckList : AppCompatActivity() {
+
     lateinit var opcao: Spinner
     val list = ArrayList<Tarefa>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checklist)
-
-
 
         opcao = findViewById(R.id.sp_filtroChecklist) as Spinner
 
@@ -44,6 +49,7 @@ class CheckList : AppCompatActivity(){
 
 
         }
+
         var tarefa = mutableListOf<Tarefa>()
 
         rv_tarefas.apply {
@@ -64,27 +70,26 @@ class CheckList : AppCompatActivity(){
 
 
             modalTarefa.bt_cria_TarefaModal.setOnClickListener {
-                /*
+
             //criar tarefa aqui
                 val retrofit = Retrofit.Builder()
                     .baseUrl("https://23.20.3.87:8080")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
-                val requests = retrofit.create(ApiServico::class.java)
+                val requests = retrofit.create(CheckListApi::class.java)
 
                     val novaTarefa = Tarefa(
                     null,
                     et_tarefaModal.text.toString(),
                     ed_importancia.text.toString(),
                     true,
-                    et_tarefaModal.text.toString(),
-                    null
+                    et_tarefaModal.text.toString()
                 )
 
                 val callCriarTarefa = requests.postTarefa(novaTarefa)
 
-                callCriarTarefa.enqueue(object: Callback<Void>{
+                callCriarTarefa.enqueue(object: Callback<Void> {
                     override fun onFailure(call: Call<Void>, t: Throwable) {
                         Toast.makeText(baseContext, "Deu um problema: " +
                                 "$t", Toast.LENGTH_SHORT).show()
@@ -92,12 +97,12 @@ class CheckList : AppCompatActivity(){
 
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         Toast.makeText(baseContext,
-                            getString(R.string.txt_tarefa_cadastrada),
+                            getString(R.string.pages_CheckListModal_txt_tarefa_cadastrada),
                             Toast.LENGTH_SHORT).show()
                     }
                 })
 
-    */
+
 
                 fun gerarList(size: Int): List<Tarefa>{
 
@@ -123,24 +128,24 @@ class CheckList : AppCompatActivity(){
                 modalDialog.dismiss()
             }
         }
-        /*
+
         consumirApiTarefa()
 
-         */
+
 
     }
-/*
+
     fun consumirApiTarefa() {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://23.20.3.87:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val requests = retrofit.create(ApiServico::class.java)
+        val requests = retrofit.create(CheckListApi::class.java)
 
-        val callFilmes = requests.getTarefas()
+        val callTarefas = requests.getTarefas()
 
-        callFilmes.enqueue(object: Callback<List<Tarefa>> {
+        callTarefas.enqueue(object: Callback<List<Tarefa>> {
             override fun onFailure(call: Call<List<Tarefa>>, t: Throwable) {
                 Toast.makeText(applicationContext, "Não foi possível carregar as tarefas $t",
                     Toast.LENGTH_SHORT).show()
@@ -157,10 +162,11 @@ class CheckList : AppCompatActivity(){
 
     fun ShowData(tarefas: List<Tarefa>){
         rv_tarefas.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = AdapterChecklist(tarefas)
+            layoutManager = LinearLayoutManager(this@CheckList)
+            adapter = TarefasAdapter(tarefas)
         }
     }
-*/
+
+
 
 }

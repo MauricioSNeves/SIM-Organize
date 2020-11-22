@@ -48,5 +48,6 @@
     <string name="pages_CheckListModal_BtnCria">CRIAR</string>
     <string name="pages_CheckListModal_BtnEdita">EDITAR</string>
     <string name="pages_CheckListModal_BtnCancela">CANCELAR</string>
+    <string name="pages_CheckListModal_txt_tarefa_cadastrada">Tarefa cadastrada com sucesso</string>
 
 </resources>

@@ -6,8 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simmobile.data.Tarefa
+import kotlinx.android.synthetic.main.criar_tarefa.view.*
+import kotlinx.android.synthetic.main.editar_tarefa.view.*
 import kotlinx.android.synthetic.main.tarefa_layout.view.*
 
 class TarefasAdapter(val tarefas: List<Tarefa>) :
@@ -32,28 +35,28 @@ class TarefasAdapter(val tarefas: List<Tarefa>) :
 
 
         holder.tv_nomeTarefa.text = itemCorrente.nomeTarefa
-/*
-       holder.ib_editar.setOnClickListener{
-           val editarTarefa = LayoutInflater.from().inflate(R.layout.editar_tarefa, null)
+        holder.ib_editar.setOnClickListener{
+
+            val context = holder.ib_editar.context;
+            val editarTarefa = LayoutInflater.from(context).inflate(R.layout.editar_tarefa, null)
 
 
-           val buider = AlertDialog.Builder().setView(editarTarefa).setTitle("Crie sua tarefa")
+            val buider = AlertDialog.Builder(context).setView(editarTarefa).setTitle("Edite sua tarefa")
 
-           val modalDialog = buider.show()
+            val modalDialog = buider.show()
 
 
 
-           editarTarefa.bt_cria_TarefaModal.setOnClickListener {
+            editarTarefa.bt_edit_TarefaModal.setOnClickListener() {
 
-               modalDialog.dismiss()
+                modalDialog.dismiss()
 
-           }
+            }
 
-           editarTarefa.bt_cancelaTarefaModal.setOnClickListener {
-               modalDialog.dismiss()
-           }
-       }
-*/
+            editarTarefa.bt_cancela_edit_TarefaModal.setOnClickListener() {
+                modalDialog.dismiss()
+            }
+        }
 
     }
 
