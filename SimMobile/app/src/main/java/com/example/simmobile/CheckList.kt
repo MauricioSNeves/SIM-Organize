@@ -30,6 +30,25 @@ class CheckList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checklist)
 
+
+        val retrofit = ClientRetrofit.criarCliente("eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgT3JnYW5pemUiLCJzdWIiOiIxIiwiaWF0IjoxNjA2MzY2MzkwLCJleHAiOjE2MDYzNzUwMzB9.rH1guWdY1jb9V1Q1SllqOv1jtsO0dhf8HD_QHqXWw38")
+
+
+        val requests = retrofit.create(CheckListApi::class.java)
+
+        val callTarefas = requests.getTarefas()
+
+        callTarefas.enqueue(object: Callback<List<Tarefa>> {
+            override fun onFailure(call: Call<List<Tarefa>>, t: Throwable) {
+                Toast.makeText(applicationContext, "Não foi possível carregar as tarefas $t",
+                    Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<List<Tarefa>>, response: Response<List<Tarefa>>) {
+                ShowData(response.body()!!)
+            }
+        })
+
         opcao = findViewById(R.id.sp_filtroChecklist) as Spinner
 
         val filtrosChecklist = arrayOf("Nenhum","Ascendente", "Descendente", "Importância")
@@ -103,22 +122,6 @@ class CheckList : AppCompatActivity() {
                 })
 
 
-
-                fun gerarList(size: Int): List<Tarefa>{
-
-
-
-                    var tarefaModal = modalTarefa.et_tarefaModal.text.toString()
-                    var importancia = modalTarefa.ed_importancia.text.toString()
-                    val item = Tarefa(null,"${tarefaModal}","${importancia}",true,
-                        "${tarefaModal}")
-                    list += item
-
-                    return list
-                }
-                val gerarTarefa = gerarList(size = 10)
-                rv_tarefas.adapter = TarefasAdapter(gerarTarefa)
-                rv_tarefas.layoutManager = LinearLayoutManager(this)
                 rv_tarefas.setHasFixedSize(true)
                 modalDialog.dismiss()
 
@@ -129,35 +132,10 @@ class CheckList : AppCompatActivity() {
             }
         }
 
-        consumirApiTarefa()
 
 
 
     }
-
-    fun consumirApiTarefa() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://23.20.3.87:8080")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val requests = retrofit.create(CheckListApi::class.java)
-
-        val callTarefas = requests.getTarefas()
-
-        callTarefas.enqueue(object: Callback<List<Tarefa>> {
-            override fun onFailure(call: Call<List<Tarefa>>, t: Throwable) {
-                Toast.makeText(applicationContext, "Não foi possível carregar as tarefas $t",
-                    Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onResponse(call: Call<List<Tarefa>>, response: Response<List<Tarefa>>) {
-                ShowData(response.body()!!)
-                }
-        })
-
-    }
-
 
 
     fun ShowData(tarefas: List<Tarefa>){

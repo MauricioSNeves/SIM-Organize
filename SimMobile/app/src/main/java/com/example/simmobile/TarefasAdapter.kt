@@ -26,15 +26,23 @@ class TarefasAdapter(val tarefas: List<Tarefa>) :
         val itemCorrente = tarefas[position]
         if (itemCorrente.nivelImportancia == "Alta"){
             holder.rl_tarefa.setBackgroundResource(R.color.colorRed)
+            holder.ib_editar.setBackgroundResource(R.color.colorRed)
+            holder.ib_concluir.setBackgroundResource(R.color.colorRed)
+            holder.ib_excluir.setBackgroundResource(R.color.colorRed)
         }else if (itemCorrente.nivelImportancia == "Média"){
             holder.rl_tarefa.setBackgroundResource(R.color.colorYellow)
+            holder.ib_editar.setBackgroundResource(R.color.colorYellow)
+            holder.ib_concluir.setBackgroundResource(R.color.colorYellow)
+            holder.ib_excluir.setBackgroundResource(R.color.colorYellow)
         }else{
             holder.rl_tarefa.setBackgroundResource(R.color.colorGreen)
+            holder.ib_editar.setBackgroundResource(R.color.colorGreen)
+            holder.ib_concluir.setBackgroundResource(R.color.colorGreen)
+            holder.ib_excluir.setBackgroundResource(R.color.colorGreen)
         }
-
-
-
         holder.tv_nomeTarefa.text = itemCorrente.nomeTarefa
+
+
         holder.ib_editar.setOnClickListener{
 
             val context = holder.ib_editar.context;
