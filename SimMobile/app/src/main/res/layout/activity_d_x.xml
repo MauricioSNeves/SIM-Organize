@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DX">
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:background="@drawable/imagedx"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/titleMCI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mciTitle"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            />
+        <TextView
+            android:id="@+id/descMCI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="descrição da MCI"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleMd1"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/md1Title"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:layout_marginLeft="25dp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/descMd1"
+                android:layout_marginTop="20dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/md1Desc"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:layout_marginLeft="25dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleMd2"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/md2Title"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+
+                android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/descMd2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/md1Desc"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="25dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray"
+                    android:textColor="@color/colorWhite"
+                    android:height="45dp"
+                    android:width="45dp"
+                    android:textAlignment="center"
+                    android:text="1"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray"
+                    android:textColor="@color/colorWhite"
+                    android:height="45dp"
+                    android:width="45dp"
+                    android:textAlignment="center"
+                    android:text="2"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray"
+                    android:textColor="@color/colorWhite"
+                    android:height="45dp"
+                    android:width="45dp"
+                    android:textAlignment="center"
+                    android:text="3"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="220dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray"
+                    android:textColor="@color/colorWhite"
+                    android:height="45dp"
+                    android:width="45dp"
+                    android:textAlignment="center"
+                    android:text="1"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray"
+                    android:textColor="@color/colorWhite"
+                    android:height="45dp"
+                    android:width="45dp"
+                    android:textAlignment="center"
+                    android:text="2"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray"
+                    android:textColor="@color/colorWhite"
+                    android:height="45dp"
+                    android:width="45dp"
+                    android:textAlignment="center"
+                    android:text="3"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/createtaks_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:onClick="createTasks"
+        android:text="@string/dx_btn_addDx"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="240dp"
+        android:gravity="fill_horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:textAlignment="center"
+        android:paddingTop="15dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
