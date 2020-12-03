@@ -48,11 +48,12 @@
     <string name="pages_CheckListModal_BtnCria">CRIAR</string>
     <string name="pages_CheckListModal_BtnEdita">EDITAR</string>
     <string name="pages_CheckListModal_BtnCancela">CANCELAR</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mciTitle">MCI</string>
     <string name="md1Title">MD1</string>
     <string name="md2Title">MD2</string>
     <string name="md1Desc">Comer muito chocolate até não aguentar</string>
+    <string name="pages_CheckListModal_txt_tarefa_cadastrada">Tarefa cadastrada com sucesso</string>
 
 </resources>

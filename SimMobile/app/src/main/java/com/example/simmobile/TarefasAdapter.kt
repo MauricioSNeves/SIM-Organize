@@ -5,9 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.TextView/*
+<<<<<<< HEAD
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simmobile.models.Tarefa
+=======
+import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.RecyclerView
+import com.example.simmobile.data.Tarefa
+import kotlinx.android.synthetic.main.criar_tarefa.view.*
+import kotlinx.android.synthetic.main.editar_tarefa.view.*
+>>>>>>> 54775ae73f45a5fbda0dc785b1397c1127f717dd
 import kotlinx.android.synthetic.main.tarefa_layout.view.*
 
 class TarefasAdapter(val tarefas: List<Tarefa>) :
@@ -23,6 +31,7 @@ class TarefasAdapter(val tarefas: List<Tarefa>) :
         val itemCorrente = tarefas[position]
         if (itemCorrente.nivelImportancia == "Alta"){
             holder.rl_tarefa.setBackgroundResource(R.color.colorRed)
+<<<<<<< HEAD
         }else if (itemCorrente.nivelImportancia == "Média"){
             holder.rl_tarefa.setBackgroundResource(R.color.colorYellow)
         }else{
@@ -55,6 +64,48 @@ class TarefasAdapter(val tarefas: List<Tarefa>) :
        }
 */
 
+=======
+            holder.ib_editar.setBackgroundResource(R.color.colorRed)
+            holder.ib_concluir.setBackgroundResource(R.color.colorRed)
+            holder.ib_excluir.setBackgroundResource(R.color.colorRed)
+        }else if (itemCorrente.nivelImportancia == "Média"){
+            holder.rl_tarefa.setBackgroundResource(R.color.colorYellow)
+            holder.ib_editar.setBackgroundResource(R.color.colorYellow)
+            holder.ib_concluir.setBackgroundResource(R.color.colorYellow)
+            holder.ib_excluir.setBackgroundResource(R.color.colorYellow)
+        }else{
+            holder.rl_tarefa.setBackgroundResource(R.color.colorGreen)
+            holder.ib_editar.setBackgroundResource(R.color.colorGreen)
+            holder.ib_concluir.setBackgroundResource(R.color.colorGreen)
+            holder.ib_excluir.setBackgroundResource(R.color.colorGreen)
+        }
+        holder.tv_nomeTarefa.text = itemCorrente.nomeTarefa
+
+
+        holder.ib_editar.setOnClickListener{
+
+            val context = holder.ib_editar.context;
+            val editarTarefa = LayoutInflater.from(context).inflate(R.layout.editar_tarefa, null)
+
+
+            val buider = AlertDialog.Builder(context).setView(editarTarefa).setTitle("Edite sua tarefa")
+
+            val modalDialog = buider.show()
+
+
+
+            editarTarefa.bt_edit_TarefaModal.setOnClickListener() {
+
+                modalDialog.dismiss()
+
+            }
+
+            editarTarefa.bt_cancela_edit_TarefaModal.setOnClickListener() {
+                modalDialog.dismiss()
+            }
+        }
+>>>>>>> 54775ae73f45a5fbda0dc785b1397c1127f717dd
+
     }
 
     override fun getItemCount() = tarefas.size
@@ -70,3 +121,4 @@ class TarefasAdapter(val tarefas: List<Tarefa>) :
 
 
 }
+*/

@@ -3,14 +3,17 @@ package com.example.simmobile
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+
 import com.example.simmobile.configurations.ClientRetrofit
 import com.example.simmobile.models.DxData
 import com.example.simmobile.models.CriaMdsData
 import com.example.simmobile.requests.QuatroDxAplication
+
 import kotlinx.android.synthetic.main.activity_criar_dx.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -90,7 +93,6 @@ class CriarDx : AppCompatActivity() {
     fun registerMds(){
         val mdUm =  input_one.text.toString();
         val mdDois =  input_two.text.toString();
-
 
         var preferencias: SharedPreferences = getSharedPreferences("autenticacao", Context.MODE_PRIVATE)
 

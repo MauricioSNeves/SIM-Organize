@@ -172,7 +172,6 @@
             android:src="@drawable/ic_baseline_add_24"
             android:background="@drawable/butao_passar_voltar"
             />
-
     </RelativeLayout>
 
     <RelativeLayout

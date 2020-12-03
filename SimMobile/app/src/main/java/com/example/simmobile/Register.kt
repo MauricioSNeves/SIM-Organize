@@ -92,7 +92,9 @@ class Register : AppCompatActivity() {
 
         user.enqueue(object : Callback<Void> {
             override fun onFailure(call: Call<Void>, t: Throwable) {
-                Toast.makeText(applicationContext, "erro", Toast.LENGTH_SHORT);
+                alertPassword.visibility = View.VISIBLE;
+                alertPassword.text = "Falha"
+
             }
 
             override fun onResponse(call: Call<Void>, response: Response<Void>) {

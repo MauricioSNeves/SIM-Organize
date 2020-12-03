@@ -11,19 +11,18 @@ class QuatroDX : AppCompatActivity() {
         setContentView(R.layout.activity_quatro_d_x)
     }
 
-    fun createDx(view: View) {
+    fun createDx(component: View) {
         val dx = Intent(this, CriarDx::class.java)
         startActivity(dx);
     }
-    fun explainDx(view: View) {
+    fun explainDx(component: View) {
         val explain = Intent(this, ExplicaDx::class.java)
         startActivity(explain);
     }
 
-    fun goToDx(view: View) {
+    fun goToDx(component: View) {
         val goToDx = Intent(this, DX::class.java);
         startActivity(goToDx);
     }
-
 
 }

@@ -101,12 +101,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(login);
     }
 
-
-    fun goToA(component: View){
-        val a = Intent(this, TesteActivity::class.java)
-        startActivity(a);
-    }
-
     fun goToRegister(component: View){
         val register = Intent(this, Register::class.java)
         startActivity(register);
