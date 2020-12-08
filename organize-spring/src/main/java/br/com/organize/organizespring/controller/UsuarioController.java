@@ -97,7 +97,7 @@ public class UsuarioController {
         message.setTo(usuario.getEmail());
         message.setFrom(email);
         message.setSubject("Organize");
-        message.setText("Confirme sua conta : "+ "http://localhost:8080/usuarios/confirmar-conta/"+usuario.getIdUsuario());
+        message.setText("Confirme sua conta : "+ "https://organize.hopto.org/usuarios/confirmar-conta/"+usuario.getIdUsuario());
 
         try {
             mailSender.send(message);
