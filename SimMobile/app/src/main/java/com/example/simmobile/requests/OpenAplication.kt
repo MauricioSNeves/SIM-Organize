@@ -1,6 +1,6 @@
 package com.example.simmobile.requests
 
-import com.example.simmobile.models.AuthData
+import com.example.simmobile.models.responses.AuthData
 import com.example.simmobile.models.LoginData
 import com.example.simmobile.models.RegisterData
 import retrofit2.Call

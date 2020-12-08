@@ -25,7 +25,7 @@
     <string name="dx_btn_addDx">Create</string>
     <string name="ex_dxTitle">O 4DX</string>
     <string name="ex_dx">" 4Dx or 4 Execution Disciplines is a method that helps you achieve goals and results in a very different way"</string>
-    <string name="mcis">"Make it possible to achieve goals: MCI and Mds "</string>
+    <string name="mcis">"Make it possible to achieve goals"</string>
     <string name="mci">"MCI: Crucially important goal! It is your ultimate goal. "</string>
     <string name="md">"MD's: Direction measures These are the most important sub-tasks! With them you will be aware of which tasks to choose during the week. "</string>
     <string name="placar">"Scoreboard "</string>

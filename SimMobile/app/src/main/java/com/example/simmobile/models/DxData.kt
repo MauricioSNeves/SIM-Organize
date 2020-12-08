@@ -2,4 +2,4 @@ package com.example.simmobile.models
 
 import android.widget.EditText
 
-data class DxData(val nome: String, val mci: String, val data: EditText)
+data class DxData(val nomeDx: String, val nomeMci: String, val dataConclusaoDx: String)

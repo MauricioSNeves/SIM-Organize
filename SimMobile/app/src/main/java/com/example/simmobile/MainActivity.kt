@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.simmobile.models.AuthData
+import com.example.simmobile.models.responses.AuthData
 import com.example.simmobile.models.LoginData
 import com.example.simmobile.requests.OpenAplication
 import kotlinx.android.synthetic.main.activity_main.alertEmail
@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         val password =  ipt_password.text;
 
         if(email.length < 3 || email.equals("") ){
-            alertEmail.visibility = View.VISIBLE;
             alertEmail.text = "Digite um e-mail válido"
+            alertEmail.visibility = View.VISIBLE;
             return;
         }
         else{
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             val email =  ipt_email.text.toString();
             val senha =  ipt_password.text.toString();
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.0.101:8080/")
+                .baseUrl("http://34.200.73.1:8090/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -97,8 +97,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToAplication(){
-        val login = Intent(this, QuatroDX::class.java)
-        startActivity(login);
+        val start = Intent(this, CheckList::class.java)
+        startActivity(start);
     }
 
     fun goToRegister(component: View){

@@ -18,7 +18,7 @@
 
 
     //4dx
-    <string name="qdx_work">Como funciona?</string>
+    <string name="qdx_work">Afinal o que é o 4DX?</string>
     <string name="criaDx_title">Crie seu 4dx</string>
     <string name="cdx_ipt_name">De um nome para o seu 4dx</string>
     <string name="cdx_ipt_mci">Digite sua MCI</string>
@@ -32,7 +32,7 @@
     <string name="dx_btn_addDx">Criar</string>
     <string name="ex_dxTitle">O 4DX</string>
     <string name="ex_dx">4Dx ou 4 Disciplinas da Execução é um método que te auxilia a alcançar metas e resultados de uma forma bem diferente</string>
-    <string name="mcis">Fazer com que consiga atingir objetivos : MCI e Mds</string>
+    <string name="mcis">Fazer com que consiga atingir objetivos</string>
     <string name="mci">MCI:  Meta crucialmente importante! É o seu objetivo final.</string>
     <string name="md">MD\'s: Medidas de direções São as sub-tarefas mais importantes! Com elas você terá noção de quais tarefas escolher durante a semana.</string>
     <string name="placar">Placar</string>
@@ -55,5 +55,16 @@
     <string name="md2Title">MD2</string>
     <string name="md1Desc">Comer muito chocolate até não aguentar</string>
     <string name="pages_CheckListModal_txt_tarefa_cadastrada">Tarefa cadastrada com sucesso</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="mcisTitle">MCI e MDs</string>
+    <string name="text_import_dx">Importar DX</string>
 
 </resources>

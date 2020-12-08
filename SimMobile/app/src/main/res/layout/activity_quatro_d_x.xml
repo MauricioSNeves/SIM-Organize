@@ -17,8 +17,8 @@
             android:layout_marginTop="30dp"
             android:layout_marginHorizontal="20dp"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/grupo"
+            android:layout_height="250dp"
+            android:src="@drawable/pensar"
             />
 
 
@@ -29,11 +29,11 @@
             android:fontFamily="sans-serif-medium"
             android:text="@string/qdx_work"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="35dp"
+            android:textColor="@color/colorPurple"
+            android:textSize="20dp"
             android:gravity="center_horizontal"
             android:textStyle="bold"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -41,36 +41,61 @@
             />
 
 
-        <TextView
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_margin="35dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/colorWhite"
-            android:paddingTop="20dp"
-            android:onClick="goToDx"
-            android:textAlignment="center"
-            android:text="meuDx"
-            android:textSize="20sp"
-            android:gravity="center_horizontal" />
+            <Button
+                android:id="@+id/btn_importdx"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorBlue"
+                android:text="@string/text_import_dx"
+                />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:id="@+id/list_dx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                >
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorWhite"
+                    android:paddingTop="20dp"
+                    android:onClick="goToDx"
+                    android:textAlignment="center"
+                    android:text="meuDx"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/goToPersonal"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@color/colorWhite"
         android:onClick="createDx"
+        android:src="@mipmap/ic_addbutton_round"
         android:text="@string/dx_btn_addDx"
-        android:textColor="@color/colorWhite"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="310dp"
         android:gravity="fill_horizontal"
+        android:layout_marginHorizontal="16dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
-        android:textAlignment="center"
+        android:layout_alignParentRight="true"
         android:paddingTop="15dp"
         />
 

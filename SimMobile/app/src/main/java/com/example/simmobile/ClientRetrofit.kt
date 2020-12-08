@@ -25,7 +25,7 @@ object ClientRetrofit {
         httpClient.addInterceptor(interceptor)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://192.168.15.1:8080/")
+            .baseUrl("http://34.200.73.1:8090/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(httpClient.build())
             .build()

@@ -56,9 +56,9 @@ class CriarDx : AppCompatActivity() {
     }
 
     fun registerDx(){
-        val nome =  input_one.text.toString();
-        val mci =  input_two.text.toString();
-        val data =  input_two;
+        val nomeDx =  input_one.text.toString();
+        val nomeMci =  input_two.text.toString();
+        val data =  input_two.toString();
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://localhost:8080/")
@@ -68,8 +68,8 @@ class CriarDx : AppCompatActivity() {
         val result = retrofit.create(QuatroDxAplication::class.java);
 
         val newDx = DxData(
-            nome,
-            mci,
+            nomeDx,
+            nomeMci,
             data
         )
 

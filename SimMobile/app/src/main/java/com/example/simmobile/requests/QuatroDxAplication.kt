@@ -3,6 +3,7 @@ package com.example.simmobile.requests
 import com.example.simmobile.models.DxData
 import com.example.simmobile.models.CriaMdsData
 import com.example.simmobile.models.TasksDxData
+import com.example.simmobile.models.responses.AllDxResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -19,7 +20,7 @@ interface QuatroDxAplication {
     fun exportDx() : Call<Void>
 
     @GET("metodosdxs")
-    fun getDxs() : Call<List<DxData>>
+    fun getDxs() : Call<List<AllDxResponse>>
 
     //MD's
     @POST("/metodosdxs/4dx/{id}/mdUm")

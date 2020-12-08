@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ExplainDx">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:onClick="close"
+        android:src="@drawable/ic_close"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentBody"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <FrameLayout
+        android:id="@+id/fragmentBody2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <FrameLayout
+        android:id="@+id/fragmentBody3"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <FrameLayout
+        android:id="@+id/fragmentBody4"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/bottomTab"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+    >
+
+<ImageButton
+    android:id="@+id/buttonBack"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:src="@drawable/ic_backbutton"
+    android:backgroundTint="@color/colorWhite"
+    />
+
+        <ImageView android:id="@+id/stepOne"
+             android:layout_width="10dp"
+            android:src="@drawable/ic_ballstep"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="10dp"/>
+
+        <ImageView
+            android:id="@+id/stepTwo"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/ic_ballstep"
+            />
+        <ImageView
+            android:id="@+id/stepThree"
+            android:layout_width="10dp"
+            android:layout_marginHorizontal="20dp"
+
+            android:src="@drawable/ic_ballstep"
+            android:layout_height="10dp"/>
+        <ImageView
+            android:id="@+id/stepFour"
+            android:layout_width="10dp"
+            android:layout_marginHorizontal="20dp"
+
+            android:src="@drawable/ic_ballstep"
+            android:layout_height="10dp"/>
+
+        <ImageButton
+            android:id="@+id/buttonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_forwardbutton"
+            android:backgroundTint="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            android:baselineAlignBottom="true"
+    />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

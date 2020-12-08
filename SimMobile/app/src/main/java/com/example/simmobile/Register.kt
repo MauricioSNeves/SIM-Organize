@@ -74,7 +74,7 @@ class Register : AppCompatActivity() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.101:8080/")
+            .baseUrl("http://192.168.15.2:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
@@ -93,12 +93,11 @@ class Register : AppCompatActivity() {
         user.enqueue(object : Callback<Void> {
             override fun onFailure(call: Call<Void>, t: Throwable) {
                 alertPassword.visibility = View.VISIBLE;
-                alertPassword.text = "Falha"
+                alertPassword.text = "Falha: $t"
 
             }
 
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
-
                 if(response.isSuccessful){
                     goToLogin()
                 }else{

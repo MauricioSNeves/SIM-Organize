@@ -17,14 +17,14 @@
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pages_CheckListModal_FormImportancia"
+        android:text="@string/pages_CheckListModal_FormTarefa"
         android:textSize="14sp"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="text|textAutoCorrect"
         android:id="@+id/et_tarefaModal"
         />
     <TextView
@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/ed_importancia"
             android:textSize="14sp"
+            android:inputType="text|textAutoCorrect"
             />
     </RelativeLayout>
 
@@ -70,7 +71,7 @@
             android:text="@string/pages_CheckListModal_BtnCria"
             android:layout_marginLeft="35dp"
             android:onClick="criarTarefa"
-            android:id="@+id/bt_cria_TarefaModal"
+            android:id="@+id/bt_criaTarefaModal"
             />
 
     </LinearLayout>
