@@ -77,6 +77,9 @@ UsuarioController {
             Level level = new Level();
             level.setUsuario(usuario);
 
+//            ESSA LINHA SERVE PARA NÃO PRECISAR DO EMAIL
+           usuario.setValido(true);
+
             repository.save(usuario);
             calendarioRepository.save(calendario);
             checkListRepository.save(checkList);
@@ -118,7 +121,7 @@ UsuarioController {
         repository.save(usuario);
 
         RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("http://localhost:3000/login");
+        redirectView.setUrl("https://organize.hopto.org/login");
         return redirectView;
     }
 
