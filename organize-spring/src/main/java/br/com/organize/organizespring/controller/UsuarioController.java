@@ -63,9 +63,9 @@ UsuarioController {
 
         Optional<Usuario> usuarioExistente = repository.findByEmail(form.getEmail());
 
-   //     if(usuarioExistente.isPresent()) {
-    //        return ResponseEntity.status(550).body("Email Existente");
-     //   } else {
+       if(usuarioExistente.isPresent()) {
+          return ResponseEntity.status(550).body("Email Existente");
+        } else {
             Usuario usuario = form.converter();
 
             Calendario calendario = new Calendario();
@@ -87,7 +87,7 @@ UsuarioController {
             URI uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuario.getIdUsuario()).toUri();
             return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
         }
-   // }
+    }
 
 
     @GetMapping("/email")

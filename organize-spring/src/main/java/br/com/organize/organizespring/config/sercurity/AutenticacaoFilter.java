@@ -31,11 +31,11 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
 
         String token = recuperarToken(request);
 
-//        boolean valido = tokenService.tokenValido(token);
+        boolean valido = tokenService.tokenValido(token);
 
-  //      if (valido) {
+        if (valido) {
             autenticarUsuario(token);
-    //    }
+       }
 
         filterChain.doFilter(request, response);
     }
