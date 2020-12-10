@@ -51,8 +51,8 @@ public class MetodoDxController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public ResponseEntity listarQuatroDx(Authentication authentication) {
-        List<MetodoDx> metodosDxs = metodoDxRepository.todosOsQuatroDx(usuarioService.usuarioAtual(authentication));
+    public ResponseEntity listarQuatroDx() {
+        List<MetodoDx> metodosDxs = metodoDxRepository.todosOsQuatroDx((long) 1);
         return ResponseEntity.ok(metodosDxs);
     }
 
@@ -83,9 +83,9 @@ public class MetodoDxController {
 
 
     @PostMapping("/4dx")
-    public ResponseEntity<MetodoDxDto> criaQuatroDx(@RequestBody MetodoDxForm form, UriComponentsBuilder uriBuilder, Authentication authentication) {
+    public ResponseEntity<MetodoDxDto> criaQuatroDx(@RequestBody MetodoDxForm form, UriComponentsBuilder uriBuilder) {
         MetodoDx metodoDx = form.converter();
-        Usuario usuario = usuarioRepository.getOne(usuarioService.usuarioAtual(authentication));
+        Usuario usuario = usuarioRepository.getOne((long) 1);
         metodoDx.setUsuario(usuario);
 
         LocalDate dataAtual = LocalDate.now();
@@ -129,7 +129,7 @@ public class MetodoDxController {
     }
 
     @PostMapping("/4dx/{id}/mdUm")
-    public ResponseEntity<MdUmDto> cadastraMdUm(@RequestBody MdUmForm form, @PathVariable("id") Integer id, UriComponentsBuilder uriBuilder, Authentication authentication) {
+    public ResponseEntity<MdUmDto> cadastraMdUm(@RequestBody MdUmForm form, @PathVariable("id") Integer id, UriComponentsBuilder uriBuilder) {
         MdUm mdUm = form.converter();
         MetodoDx metodoDx = metodoDxRepository.getOne(id);
         mdUm.setMetodoDx(metodoDx);
@@ -139,7 +139,7 @@ public class MetodoDxController {
     }
 
     @PostMapping("/4dx/{id}/mddois")
-    public ResponseEntity<MdDoisDto> cadastraMdDois(@RequestBody MdDoisForm form, @PathVariable("id") Integer id, UriComponentsBuilder uriBuilder, Authentication authentication) {
+    public ResponseEntity<MdDoisDto> cadastraMdDois(@RequestBody MdDoisForm form, @PathVariable("id") Integer id, UriComponentsBuilder uriBuilder) {
         MdDois mdDois = form.converter();
         MetodoDx metodoDx = metodoDxRepository.getOne(id);
         mdDois.setMetodoDx(metodoDx);
@@ -149,7 +149,7 @@ public class MetodoDxController {
     }
 
     @PostMapping("/4dx/{idDx}/mdUm/{idMd}")
-    public ResponseEntity<TarefaMdUmDto> cadastraTarefasMdUm(@RequestBody TarefaMdUmForm form, @PathVariable("idDx") Integer idDx, @PathVariable("idMd") Integer idMd, UriComponentsBuilder uriBuilder, Authentication authentication) {
+    public ResponseEntity<TarefaMdUmDto> cadastraTarefasMdUm(@RequestBody TarefaMdUmForm form, @PathVariable("idDx") Integer idDx, @PathVariable("idMd") Integer idMd, UriComponentsBuilder uriBuilder) {
         TarefaMdUm tarefaMdUm = form.converter();
         MdUm mdUm = mdUmRepository.getOne(idMd);
         tarefaMdUm.setMdUm(mdUm);
@@ -159,7 +159,7 @@ public class MetodoDxController {
     }
 
     @PostMapping("/4dx/{idDx}/mdDois/{idMd}")
-    public ResponseEntity<TarefaMdDoisDto> cadastraTarefasMdDois(@RequestBody TarefaMdDoisForm form, @PathVariable("idDx") Integer idDx, @PathVariable("idMd") Integer idMd, UriComponentsBuilder uriBuilder, Authentication authentication) {
+    public ResponseEntity<TarefaMdDoisDto> cadastraTarefasMdDois(@RequestBody TarefaMdDoisForm form, @PathVariable("idDx") Integer idDx, @PathVariable("idMd") Integer idMd, UriComponentsBuilder uriBuilder) {
         TarefaMdDois tarefaMdDois = form.converter();
         MdDois mdDois = mdDoisRepository.getOne(idMd);
         tarefaMdDois.setMdDois(mdDois);
@@ -237,8 +237,6 @@ public class MetodoDxController {
                 }
             }
         }
-
-
 
 
         return contadorConcluido > contadorNaoConcluido ? 1 : 0;
