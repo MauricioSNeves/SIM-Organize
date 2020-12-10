@@ -34,16 +34,14 @@ public class UsuarioService {
         return idCalendario;
     }
 
-//    public Integer checklistUsuario(Authentication authentication, CheckListRepository checklistRepository) {
-//        Usuario logado = (Usuario) authentication.getPrincipal();
-//        Integer idChecklist = checklistRepository.idChecklist(logado.getIdUsuario());
-//        return idChecklist;
-//    }
     public Integer checklistUsuario(Long id, CheckListRepository checklistRepository) {
         Optional<Usuario> logado = usuarioRepository.findById(id);
-//        Usuario logado = (Usuario) authentication.getPrincipal();
-        Integer idChecklist = checklistRepository.idChecklist(logado.get().getIdUsuario());
-        return idChecklist;
+        if (logado.isPresent()) {
+            Integer idChecklist = checklistRepository.idChecklist(logado.get().getIdUsuario());
+            return idChecklist;
+        }else {
+            return null;
+        }
     }
 
 }
