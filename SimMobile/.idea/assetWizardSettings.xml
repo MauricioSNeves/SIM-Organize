@@ -328,7 +328,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Users/Gomes/AppData/Local/JetBrains/Toolbox/apps/AndroidStudio/ch-0/193.6821437/plugins/android/lib/android.jar!/images/material/icons/materialicons/close/baseline_close_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/settings/baseline_settings_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -339,8 +339,8 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="fcfcfc" />
-                            <entry key="outputName" value="ic_baseline_close_24" />
-                            <entry key="sourceFile" value="C:\Users\geovanna.santos\Downloads\goal.svg" />
+                            <entry key="outputName" value="ic_baseline_settings_24" />
+                            <entry key="sourceFile" value="/C:\Users\geovanna.santos\Downloads\goal.svg" />
                           </map>
                         </option>
                       </PersistentState>

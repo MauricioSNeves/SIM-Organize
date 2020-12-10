@@ -47,7 +47,7 @@
         android:id="@+id/input_three"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="@string/cdx_ipt_data"
+        android:hint="@string/dataFinal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/input_two"

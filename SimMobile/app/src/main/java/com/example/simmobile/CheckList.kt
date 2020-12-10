@@ -1,6 +1,7 @@
 package com.example.simmobile
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -27,6 +28,17 @@ class CheckList  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checklist)
+
+
+        bottomNavigation.setOnNavigationItemReselectedListener {
+            when(it.itemId){
+                R.id.main -> goToMain();
+                R.id.out -> goToLogin();
+                else -> Toast.makeText(applicationContext, " Já está na Checklist",
+                    Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
 
         var preferencias: SharedPreferences = getSharedPreferences("autenticacao", Context.MODE_PRIVATE)
@@ -132,6 +144,9 @@ class CheckList  : AppCompatActivity() {
 
     }
 
+    private fun goToMain() {
+        TODO("Not yet implemented")
+    }
 
 
     fun ShowData(tarefas: List<Tarefa>){
@@ -141,6 +156,11 @@ class CheckList  : AppCompatActivity() {
         }
     }
 
+
+    private fun goToLogin(){
+        val login = Intent(this, MainActivity::class.java)
+        startActivity(login);
+    }
 
 
 }

@@ -32,6 +32,7 @@
     <string name="placar_expl">"There you can see your performance. Remember, it has to be simple and objective. "</string>
     <string name="funciona">"How it works? "</string>
     <string name="finalexp">"Each week you will have to register a new MD until the final week. Each week you will have to say whether or not you completed the task for the previous week and choose a new one for the next week. "</string>
+    <string name="dataFinal">Final Date: year-month-day</string>
 
 
 </resources>

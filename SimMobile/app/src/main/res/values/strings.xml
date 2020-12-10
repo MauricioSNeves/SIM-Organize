@@ -66,5 +66,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="mcisTitle">MCI e MDs</string>
     <string name="text_import_dx">Importar DX</string>
+    <string name="dataFinal">Data final : ano-mes-dia</string>
 
 </resources>

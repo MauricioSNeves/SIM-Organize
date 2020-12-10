@@ -121,23 +121,7 @@
         app:layout_constraintTop_toBottomOf="@id/btn_login"
         />
 
-    <TextView
-        android:id="@+id/goToA"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-medium"
-        android:textStyle="normal"
-        android:text="TesteFrags"
-        android:textColor="#803D393F"
-        android:textSize="15dp"
-        android:onClick="goToA"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/goTo"
-        />
+
 
 
 
