@@ -58,6 +58,11 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/h2-console/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/h2-console/**").permitAll()
 
+                .antMatchers(HttpMethod.POST, "/checklists/tarefa").permitAll()
+                .antMatchers(HttpMethod.PUT, "/checklists/tarefa/{id}").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/checklists/tarefa/{id}").permitAll()
+                .antMatchers(HttpMethod.GET, "/checklists/").permitAll()
+
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
