@@ -1,3 +1,3 @@
 package com.example.simmobile.models
 
-class CriaMdDoisTasks (val nomeTarefaMdDois:String)
+data class CriaMdDoisTasks (val nomeTarefaMdDois:String)
