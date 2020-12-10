@@ -61,13 +61,12 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/checklists/tarefa").permitAll()
                 .antMatchers(HttpMethod.PUT, "/checklists/tarefa/{id}").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/checklists/tarefa/{id}").permitAll()
-                .antMatchers(HttpMethod.GET, "/checklists/").permitAll()
+                .antMatchers(HttpMethod.GET, "/checklists").permitAll()
 
-                .antMatchers(HttpMethod.GET, "/metodosdxs/").permitAll()
+                .antMatchers(HttpMethod.GET, "/metodosdxs").permitAll()
                 .antMatchers(HttpMethod.GET, "/metodosdxs/4dx/{id}").permitAll()
                 .antMatchers(HttpMethod.GET, "/metodosdxs/tarefas/{id}").permitAll()
 
-                .antMatchers(HttpMethod.POST, "/metodosdxs/4dx").permitAll()
                 .antMatchers(HttpMethod.POST, "/metodosdxs/4dx").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/metodosdxs/4dx/{id}").permitAll()
                 .antMatchers(HttpMethod.POST, "/metodosdxs/4dx/{id}/mdUm").permitAll()

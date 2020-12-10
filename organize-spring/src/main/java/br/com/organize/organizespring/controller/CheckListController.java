@@ -38,15 +38,15 @@ public class CheckListController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public ResponseEntity listarTarefas(Authentication authentication) {
-        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
+    public ResponseEntity listarTarefas() {
+        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario((long) 1, checkListRepository));
         return ResponseEntity.ok(tarefas);
     }
 
     @PostMapping("/tarefa")
-    public ResponseEntity<TarefaDto> cadastarTarefa(@RequestBody TarefaForm form, UriComponentsBuilder uriBuilder, Authentication authentication) {
+    public ResponseEntity<TarefaDto> cadastarTarefa(@RequestBody TarefaForm form, UriComponentsBuilder uriBuilder) {
         Tarefa tarefa = form.converter();
-        CheckList checkList = checkListRepository.getOne(usuarioService.checklistUsuario(authentication, checkListRepository));
+        CheckList checkList = checkListRepository.getOne(usuarioService.checklistUsuario((long) 1, checkListRepository));
         tarefa.setCheckList(checkList);
         repository.save(tarefa);
         URI uri = uriBuilder.path("/checklists/tarefa/{id}").buildAndExpand(tarefa.getIdTarefa()).toUri();
@@ -75,34 +75,34 @@ public class CheckListController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/tarefa/ativa")
-    public ResponseEntity listarTarefasTrue(Authentication authentication) {
-        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
-
-        int contadorTrue = 0;
-
-        for (Tarefa tarefinha: tarefas) {
-            if (tarefinha.getStatusTarefa() == true){
-                contadorTrue++;
-            }
-        }
-
-        return ResponseEntity.ok(contadorTrue);
-    }
-
-    @GetMapping("/tarefa/id/ativa")
-    public ResponseEntity listarIdsTarefasTrue(Authentication authentication) {
-        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
-        List<Integer> ids = new ArrayList<>();
-
-        for (Tarefa tarefinha: tarefas) {
-            if (tarefinha.getStatusTarefa() == true){
-                ids.add(tarefinha.getIdTarefa());
-            }
-        }
-
-        return ResponseEntity.ok(ids);
-    }
+//    @GetMapping("/tarefa/ativa")
+//    public ResponseEntity listarTarefasTrue(Authentication authentication) {
+//        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
+//
+//        int contadorTrue = 0;
+//
+//        for (Tarefa tarefinha: tarefas) {
+//            if (tarefinha.getStatusTarefa() == true){
+//                contadorTrue++;
+//            }
+//        }
+//
+//        return ResponseEntity.ok(contadorTrue);
+//    }
+//
+//    @GetMapping("/tarefa/id/ativa")
+//    public ResponseEntity listarIdsTarefasTrue(Authentication authentication) {
+//        List<Tarefa> tarefas = repository.todosAsTarefas(usuarioService.checklistUsuario(authentication, checkListRepository));
+//        List<Integer> ids = new ArrayList<>();
+//
+//        for (Tarefa tarefinha: tarefas) {
+//            if (tarefinha.getStatusTarefa() == true){
+//                ids.add(tarefinha.getIdTarefa());
+//            }
+//        }
+//
+//        return ResponseEntity.ok(ids);
+//    }
 
     @GetMapping("/cep/{cep}")
     public ResponseEntity consultarCep(@PathVariable String cep) {
