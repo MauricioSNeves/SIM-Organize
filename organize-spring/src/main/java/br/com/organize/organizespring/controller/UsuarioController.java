@@ -85,7 +85,7 @@ UsuarioController {
             checkListRepository.save(checkList);
             levelRepository.save(level);
 
-            enviaEmail(usuario, form.getEmail());
+//            enviaEmail(usuario, form.getEmail());
 
             URI uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuario.getIdUsuario()).toUri();
             return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
